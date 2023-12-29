@@ -28,10 +28,11 @@
         android:autoText="false"
         android:ems="10"
         android:gravity="center"
-        android:inputType="text"
+
         android:numeric="decimal"
-        android:text="amount"
-        android:layout_marginTop="16dp"/>
+        android:text="0.0"
+        android:layout_marginTop="16dp"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView2"
