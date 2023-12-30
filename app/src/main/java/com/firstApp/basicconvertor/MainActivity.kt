@@ -99,7 +99,7 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
         toS.setOnClickListener(showMyDialog(toS))
         conv.setOnClickListener() {
 
-            amount.text
+
             result.setText(
                 "${String.format("%.2f",convertor.convert(amount.text.toString().toDouble(),fromS.text.toString(),toS.text.toString()))} ${toS.text}")
 
