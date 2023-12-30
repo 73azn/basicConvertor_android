@@ -1,69 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center|top"
+    android:gravity="center"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="from"
-        android:textSize="20sp" />
+        android:text="Basic Convertor"
+        android:textAlignment="center"
+        android:textSize="34sp" />
 
-    <Spinner
-        android:id="@+id/fromT"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autoText="false"
-        android:ems="10"
-        android:gravity="center"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="from"
+            android:textSize="20sp" />
 
-        android:numeric="decimal"
-        android:text="0.0"
-        android:layout_marginTop="16dp"
-        android:inputType="number" />
+        <TextView
+            android:id="@+id/curFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
+            android:gravity="center|center_vertical"
+            android:hint=" Select Currency"
+            android:padding="12dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="to"
-        android:textSize="20sp" />
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:autoText="false"
+            android:ems="10"
 
-    <Spinner
-        android:id="@+id/toT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="16dp"/>
+            android:gravity="center"
+            android:inputType="number"
+            android:numeric="decimal"
+            android:text="0.0" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="convert"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="to"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="here are the result"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/curTo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
+            android:gravity="center|center_vertical"
+            android:hint="Select Currency"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="convert" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="here are the result"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="314dp"
+            android:gravity="bottom|center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/insta"
+                android:layout_width="5dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:src="@drawable/insta"
+                tools:src="@drawable/insta"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/x"
+                android:layout_width="5dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:src="@drawable/x"
+                tools:src="@drawable/x"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/github"
+                android:layout_width="5dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:src="@drawable/github"
+                android:visibility="visible"
+                tools:src="@drawable/github" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="made by Ameir"
+            android:textAlignment="center" />
+
+    </LinearLayout>
 
 </LinearLayout>
