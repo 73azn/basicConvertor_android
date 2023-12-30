@@ -1,4 +1,4 @@
-package com.example.basicconvertor
+package com.firstApp.basicconvertor
 
 import DataCollector
 import android.app.Dialog
@@ -17,7 +17,7 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import com.firstApp.basicconvertor.R
+
 import kotlinx.coroutines.runBlocking
 
 class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
