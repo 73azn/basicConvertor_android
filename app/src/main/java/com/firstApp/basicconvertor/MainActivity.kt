@@ -19,6 +19,9 @@ import android.widget.TextView
 import androidx.activity.ComponentActivity
 
 import kotlinx.coroutines.runBlocking
+import java.math.BigDecimal
+import java.math.RoundingMode
+import kotlin.math.log
 
 class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
     val convertor = DataCollector()
@@ -26,6 +29,7 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         runBlocking {
             convertor.build()
         }
@@ -48,6 +52,7 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
             searchCur.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                     // Code to execute before the text changes
+                    adapter.filter.filter(s)
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -83,9 +88,11 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
         val toS: TextView = findViewById(R.id.curTo)
 
 
-        val amount: EditText = findViewById(R.id.editTextText)
-        val result: TextView = findViewById(R.id.textView3)
-        val conv: Button = findViewById(R.id.button)
+        val amountF: EditText = findViewById(R.id.editTextText)
+       val result: EditText = findViewById(R.id.editText)
+        result.setFocusable(false);
+        result.setCursorVisible(false);
+        result.setKeyListener(null);
         this.findViewById<ImageView>(R.id.x).setOnClickListener(){
             openWebPage("https://x.com/73azn")
         }
@@ -97,19 +104,50 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
         }
         fromS.setOnClickListener(showMyDialog(fromS))
         toS.setOnClickListener(showMyDialog(toS))
-        conv.setOnClickListener() {
+
+        amountF.addTextChangedListener(object : TextWatcher{
+
+            var isEditing : Boolean = false
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s?.isNotBlank()!!) {
+                    if (fromS.text.toString().equals("") || toS.text.toString().equals("")) {
+                        return
+                    }
+
+                    val fixed ="%.3f".format(convertor.convert(
+                        amountF.text.toString().toDouble(),
+                        fromS.text.toString(),
+                        toS.text.toString())).trim('0')
+                        .trimEnd('.')
+                    result.setText(
+                        "$fixed ${toS.text.toString()}"
+                    )
 
 
-            result.setText(
-                "${String.format("%.2f",convertor.convert(amount.text.toString().toDouble(),fromS.text.toString(),toS.text.toString()))} ${toS.text}")
 
-        //under here are the spinner dialog
+                }
+                else if (s.isBlank()){
+                  result.setText("")
+                }
+
+            }
+
+
+            override fun afterTextChanged(s: Editable?) {
 
 
 
 
 
-        }
+            }
+        })
+
+
+
     }
 
 
