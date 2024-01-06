@@ -34,7 +34,8 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
             convertor.build()
         }
         val keys: Array<String> =convertor.rateCode?.keys?.map { it.toString() }?.toTypedArray() ?: arrayOf()
-        val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,keys)
+        var adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,keys)
+        val tempad = adapter
         //this is the dialog for selecting currency
         fun showMyDialog(text : TextView): View.OnClickListener { return View.OnClickListener {
             val dialog = Dialog(this@MainActivity)
@@ -52,11 +53,12 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
             searchCur.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                     // Code to execute before the text changes
-                    adapter.filter.filter(s)
+
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     adapter.filter.filter(s)
+
                 }
 
                 override fun afterTextChanged(s: Editable?) {
@@ -72,10 +74,13 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
                     id: Long
                 ) {
                     text.setText(adapter.getItem(position))
+                    adapter.filter.filter("")
                     dialog.dismiss()
 
                 }
             })
+
+
         }
         }
 
