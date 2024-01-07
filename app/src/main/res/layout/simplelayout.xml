@@ -100,6 +100,14 @@
                 android:padding="12dp" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="my social"
+            android:textSize="34sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,8 +121,8 @@
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:src="@drawable/insta"
-                tools:src="@drawable/insta"
-                tools:visibility="visible" />
+                android:visibility="visible"
+                tools:src="@drawable/insta" />
 
             <ImageView
                 android:id="@+id/x"
@@ -122,8 +130,8 @@
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:src="@drawable/x"
-                tools:src="@drawable/x"
-                tools:visibility="visible" />
+                android:visibility="visible"
+                tools:src="@drawable/x" />
 
             <ImageView
                 android:id="@+id/github"
@@ -140,7 +148,7 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="made by Ameir"
+            android:text="made by 73azn"
             android:textAlignment="center" />
 
     </LinearLayout>

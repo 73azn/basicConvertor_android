@@ -34,8 +34,8 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
             convertor.build()
         }
         val keys: Array<String> =convertor.rateCode?.keys?.map { it.toString() }?.toTypedArray() ?: arrayOf()
-        var adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,keys)
-        val tempad = adapter
+        val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,keys)
+
         //this is the dialog for selecting currency
         fun showMyDialog(text : TextView): View.OnClickListener { return View.OnClickListener {
             val dialog = Dialog(this@MainActivity)
@@ -80,7 +80,7 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
                 }
             })
 
-
+ //commit
         }
         }
 
