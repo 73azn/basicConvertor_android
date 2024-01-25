@@ -144,10 +144,6 @@ class MainActivity : ComponentActivity(), AdapterView.OnItemSelectedListener{
 
             override fun afterTextChanged(s: Editable?) {
 
-
-
-
-
             }
         })
 
